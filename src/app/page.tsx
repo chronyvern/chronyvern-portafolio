@@ -5,8 +5,8 @@ import { getE621Posts, postImageUrl } from "@/lib/e621";
 const navLinks = [
   { label: "Galería", href: "#galeria" },
   { label: "Comisiones", href: "#comisiones" },
-  { label: "YCH", href: "#ych" },
-  { label: "Adoptables", href: "#adoptables" },
+  ...(site.ych.length > 0 ? [{ label: "YCH", href: "#ych" }] : []),
+  ...(site.adoptables.length > 0 ? [{ label: "Adoptables", href: "#adoptables" }] : []),
   { label: "Sobre mí", href: "#sobre-mi" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -115,7 +115,12 @@ export default async function Home() {
         {/* COMISIONES */}
         <section id="comisiones" className="border-t border-white/10">
           <div className="mx-auto max-w-5xl px-6 py-20">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground">Comisiones</h2>
+            <div className="flex flex-wrap items-center gap-3">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground">Comisiones</h2>
+              <span className={`rounded-full px-3 py-1 text-xs font-semibold ${site.commissionsOpen ? "bg-accent/15 text-accent" : "bg-amber-500/15 text-amber-400"}`}>
+                {site.commissionsOpen ? "Abiertas" : "Cerradas"}
+              </span>
+            </div>
             <p className="mt-3 max-w-2xl text-muted">
               Tarifas orientativas. Se pide el 50% por adelantado para reservar tu turno.
             </p>
@@ -188,7 +193,8 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* YCH */}
+        {/* YCH (se oculta si no hay contenido) */}
+        {site.ych.length > 0 && (
         <section id="ych" className="border-t border-white/10">
           <div className="mx-auto max-w-5xl px-6 py-20">
             <h2 className="text-3xl font-bold tracking-tight text-foreground">YCH</h2>
@@ -242,8 +248,10 @@ export default async function Home() {
             </div>
           </div>
         </section>
+        )}
 
-        {/* ADOPTABLES */}
+        {/* ADOPTABLES (se oculta si no hay contenido) */}
+        {site.adoptables.length > 0 && (
         <section id="adoptables" className="border-t border-white/10">
           <div className="mx-auto max-w-5xl px-6 py-20">
             <h2 className="text-3xl font-bold tracking-tight text-foreground">Adoptables</h2>
@@ -297,6 +305,7 @@ export default async function Home() {
             </div>
           </div>
         </section>
+        )}
 
         {/* SOBRE MÍ */}
         <section id="sobre-mi" className="border-t border-white/10">

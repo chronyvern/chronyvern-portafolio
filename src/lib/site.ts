@@ -67,6 +67,9 @@ export const site = {
   // Tu página de Ko-fi (para tips y apoyo)
   koFi: "https://ko-fi.com/chronyvern",
 
+  // ¿Aceptas comisiones ahora? true = "Abiertas" / false = "Cerradas"
+  commissionsOpen: true,
+
   // Biografía para la sección "Sobre mí" (cada texto es un párrafo)
   bio: [
     "Hola, soy chronyvern. Tengo 30 años y llevo un año dibujando en tradicional y dos meses en digital.",
@@ -89,12 +92,12 @@ export const site = {
 
   // Tarifas de comisiones (edita nombres, precios y descripciones)
   commissions: [
-    { name: "Boceto", price: "10–15 USD", description: "Rápido y suelto. Ideal para ver la idea antes de comprometerte." },
-    { name: "Lineart", price: "18–25 USD", description: "Línea limpia. Perfecto si después quieres colorearlo tú o usarlo de base." },
-    { name: "Color plano", price: "25–35 USD", description: "Colores base, se ve terminado sin el coste del render." },
-    { name: "Full color", price: "40–60 USD", description: "Con luces y sombras. El acabado completo." },
-    { name: "Página de cómic (B/N)", price: "50–75 USD", description: "4–6 viñetas normales en blanco y negro." },
-    { name: "Página de cómic (color)", price: "80–110 USD", description: "4–6 viñetas normales a color." },
+    { name: "Boceto", price: "desde 8 USD", description: "Rápido y suelto. Ideal para ver la idea antes de comprometerte." },
+    { name: "Lineart", price: "desde 14 USD", description: "Línea limpia. Perfecto si después quieres colorearlo tú o usarlo de base." },
+    { name: "Color plano", price: "desde 20 USD", description: "Colores base, se ve terminado sin el coste del render." },
+    { name: "Full color", price: "desde 32 USD", description: "Con luces y sombras. El acabado completo." },
+    { name: "Página de cómic (B/N)", price: "desde 40 USD", description: "4–6 viñetas normales en blanco y negro." },
+    { name: "Página de cómic (color)", price: "desde 55 USD", description: "4–6 viñetas normales a color." },
   ] as Commission[],
 
   // Extras opcionales
@@ -108,6 +111,7 @@ export const site = {
 
   // Condiciones de las comisiones
   terms: [
+    "🎉 Promo de lanzamiento: 20% OFF en tu primera comisión.",
     "50% de adelanto para empezar.",
     "Máximo 2–3 rondas de revisiones.",
     "El tiempo de entrega depende del tipo de pieza.",
@@ -116,39 +120,22 @@ export const site = {
 
   // Métodos de pago (status: "Activo" o "Próximamente"; href: enlace o "")
   paymentMethods: [
-    { name: "Ko-fi", note: "Tips y piezas chicas", status: "Activo", href: "https://ko-fi.com/chronyvern" },
-    { name: "Artconomy", note: "Tarjeta + comisiones", status: "Activo", href: "https://artconomy.com/profile/chronyvern/about/" },
-    { name: "VGen", note: "Comisiones con buffer", status: "Activo", href: "https://vgen.co/chronyvern/requested" },
-    { name: "Cripto (USDT · USDC · SOL · ETH · BTC · XMR)", note: "La red se confirma en cada pedido", status: "Próximamente", href: "" },
+    { name: "Ko-fi", note: "Pago con PayPal o tarjeta", status: "Activo", href: "https://ko-fi.com/chronyvern" },
+    { name: "Artconomy", note: "Escrow y tarjeta", status: "Próximamente", href: "" },
+    { name: "VGen", note: "Comisiones con buffer", status: "Próximamente", href: "" },
   ] as PaymentMethod[],
 
-  // Galería: guarda tus imágenes en la carpeta "public" y escribe aquí
-  // su ruta. Ejemplo: { title: "Mi dibujo", src: "/mi-dibujo.jpg" }.
-  // Si "src" está vacío, se muestra una tarjeta de ejemplo.
-  gallery: [
-    { title: "Obra 1", src: "" },
-    { title: "Obra 2", src: "" },
-    { title: "Obra 3", src: "" },
-    { title: "Obra 4", src: "" },
-    { title: "Obra 5", src: "" },
-    { title: "Obra 6", src: "" },
-  ],
+  // ⚠️ La galería YA NO se edita aquí: se llena automáticamente
+  // desde e621 (ver src/lib/e621.ts).
+  gallery: [],
 
   // YCH ("Your Character Here"): poses listas para el personaje del comprador.
-  // "src" = imagen en public/, "status" = Abierto | Cerrado | Vendido.
-  ych: [
-    { title: "YCH 1", src: "", price: "30 USD", slots: "3 slots", status: "Abierto", link: "" },
-    { title: "YCH 2", src: "", price: "Subasta", slots: "1 slot", status: "Abierto", link: "" },
-    { title: "YCH 3", src: "", price: "25 USD", slots: "2 slots", status: "Cerrado", link: "" },
-  ] as Ych[],
+  // Déjalo vacío ([]) y la sección se ocultará automáticamente.
+  ych: [] as Ych[],
 
   // Adoptables: diseños de personajes listos para adoptar.
-  // "sb" = puja inicial, "mi" = incremento mínimo, "ab" = auto-buy.
-  adoptables: [
-    { title: "Adoptable 1", src: "", sb: "30 USD", mi: "5 USD", ab: "150 USD", status: "Abierto", link: "" },
-    { title: "Adoptable 2", src: "", sb: "20 USD", mi: "5 USD", ab: "100 USD", status: "Abierto", link: "" },
-    { title: "Adoptable 3", src: "", sb: "25 USD", mi: "5 USD", ab: "—", status: "Vendido", link: "" },
-  ] as Adoptable[],
+  // Déjalo vacío ([]) y la sección se ocultará automáticamente.
+  adoptables: [] as Adoptable[],
 };
 
 // ------------------------------------------------------------
