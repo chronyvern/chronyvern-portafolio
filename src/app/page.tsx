@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { site } from "@/lib/site";
+import { getE621Posts, postImageUrl } from "@/lib/e621";
 
 const navLinks = [
   { label: "Galería", href: "#galeria" },
@@ -16,7 +17,8 @@ function statusBadge(status: string) {
   return "bg-zinc-800 text-zinc-500";
 }
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getE621Posts();
   return (
     <div className="flex-1">
       {/* Barra de navegación */}
@@ -73,37 +75,39 @@ export default function Home() {
           </div>
         </section>
 
-        {/* GALERÍA */}
+        {/* GALERÍA (se llena sola desde e621) */}
         <section id="galeria" className="mx-auto max-w-5xl px-6 py-20">
           <h2 className="text-3xl font-bold tracking-tight text-foreground">Galería</h2>
           <p className="mt-3 max-w-2xl text-muted">
-            Una muestra de mi trabajo. Sustituye estas tarjetas por tus propias imágenes.
+            Lo último que he subido a e621. Toca una pieza para verla completa.
           </p>
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {site.gallery.map((obra) =>
-              obra.src ? (
-                <div
-                  key={obra.title}
-                  className="group relative aspect-square overflow-hidden rounded-xl border border-white/10"
-                >
-                  <Image
-                    src={obra.src}
-                    alt={obra.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-              ) : (
-                <div
-                  key={obra.title}
-                  className="flex aspect-square flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-white/15 bg-white/[0.02] p-6 text-center transition-colors hover:border-accent/50"
-                >
-                  <span className="text-2xl">🖼️</span>
-                  <p className="text-sm font-medium text-muted">{obra.title}</p>
-                  <p className="text-xs text-zinc-600">Añade tu imagen aquí</p>
-                </div>
-              )
+            {posts.length > 0 ? (
+              posts.map((post) => {
+                const src = postImageUrl(post);
+                if (!src) return null;
+                return (
+                  <a
+                    key={post.id}
+                    href={`https://e621.net/posts/${post.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-white/[0.02]"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={src}
+                      alt={`e621 post ${post.id}`}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </a>
+                );
+              })
+            ) : (
+              <p className="col-span-full text-sm text-muted">
+                Aún no hay imágenes — estoy trayéndolas de e621…
+              </p>
             )}
           </div>
         </section>
