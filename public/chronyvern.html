@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chronyvern · Links</title>
+<meta name="description" content="Enlaces oficiales de Chronyvern — artista NSFW (+18). FurAffinity, e621, Pixiv, Bluesky, X, Ko-fi y comisiones." />
+<meta property="og:title" content="Chronyvern · Links" />
+<meta property="og:description" content="Artista NSFW · +18 — todos mis enlaces en un solo lugar." />
+<meta property="og:image" content="https://cdn.bsky.app/img/avatar/plain/did:plc:x5om3mtyxzbgf673wvx33imq/bafkreice3yoopyacyyi7tpxym4ymb34wiq6cncse2c2wvarfzuxokrvd7a" />
+<meta name="theme-color" content="#0c0a16" />
+<style>
+  :root{
+    --bg:#0a0812;
+    --ink:#f2eefc;
+    --muted:#a99acb;
+    --pink:#ff3ec8;
+    --purple:#7a3cff;
+    --cyan:#00e0ff;
+    --kofi1:#ff5e5b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    min-height:100vh;
+    color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(900px 520px at 12% -8%, rgba(122,60,255,.30), transparent 60%),
+      radial-gradient(820px 520px at 108% 12%, rgba(255,62,200,.24), transparent 60%),
+      radial-gradient(720px 520px at 50% 118%, rgba(0,224,255,.16), transparent 60%),
+      var(--bg);
+    background-attachment:fixed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px 16px;
+  }
+  body.gated{overflow:hidden}
+  body.gated .wrap{filter:blur(12px);pointer-events:none;user-select:none}
+
+  /* ---------- Aviso de edad ---------- */
+  .gate{
+    position:fixed;inset:0;z-index:50;
+    display:flex;align-items:center;justify-content:center;padding:20px;
+    background:
+      radial-gradient(700px 400px at 50% 20%, rgba(122,60,255,.22), transparent 60%),
+      rgba(5,3,11,.97);
+    backdrop-filter:blur(8px);
+  }
+  .gate.hidden{display:none}
+  .gate-box{
+    width:100%;max-width:400px;text-align:center;
+    padding:32px 26px;border-radius:22px;
+    background:linear-gradient(180deg,#181128,#0c0a16);
+    border:1px solid rgba(255,62,200,.45);
+    box-shadow:0 0 40px rgba(255,62,200,.25);
+  }
+  .gate-box .gicon{font-size:42px}
+  .gate-box h2{margin-top:10px;font-size:21px;font-weight:800;letter-spacing:.3px}
+  .gate-box p{margin-top:10px;font-size:14px;line-height:1.55;color:var(--muted)}
+  .gbtns{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+  .gbtn{
+    display:block;text-decoration:none;cursor:pointer;
+    border:none;font-family:inherit;font-size:15px;font-weight:800;
+    color:#fff;padding:13px;border-radius:13px;
+  }
+  .gbtn.yes{background:linear-gradient(90deg,var(--pink),var(--purple));box-shadow:0 6px 20px rgba(255,62,200,.4)}
+  .gbtn.no{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#cbc2e6}
+  .gbtn:hover{filter:brightness(1.07)}
+  .gnote{margin-top:16px;font-size:11px;color:#6f6397}
+
+  .wrap{width:100%;max-width:440px}
+  .card{
+    padding:2px;
+    border-radius:24px;
+    background:linear-gradient(135deg,var(--pink),var(--purple),var(--cyan),var(--pink));
+    background-size:320% 320%;
+    animation:shift 9s ease infinite;
+    box-shadow:0 0 30px rgba(255,62,200,.28),0 0 70px rgba(122,60,255,.18);
+  }
+  @keyframes shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .inner{
+    border-radius:22px;
+    padding:26px 22px 20px;
+    background:linear-gradient(180deg,#181128 0%,#0c0a16 100%);
+  }
+  .profile{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .avatar{
+    width:86px;height:86px;border-radius:50%;
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+    object-fit:cover;
+    box-shadow:0 0 26px rgba(255,62,200,.55),0 0 0 4px rgba(255,255,255,.06);
+  }
+  .name{margin-top:14px;font-size:26px;font-weight:800;letter-spacing:.4px}
+  .tag{margin-top:5px;font-size:14px;color:var(--muted)}
+  .badges{margin-top:12px;display:flex;gap:8px;justify-content:center}
+  .badge{
+    font-size:11px;font-weight:800;letter-spacing:1px;
+    color:#ffd7f2;background:rgba(255,62,200,.16);
+    border:1px solid rgba(255,62,200,.5);
+    padding:4px 10px;border-radius:999px;
+  }
+  .badge.alt{color:#cfe9ff;background:rgba(0,224,255,.12);border-color:rgba(0,224,255,.45)}
+
+  .money{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .pill{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    text-decoration:none;color:#fff;font-weight:800;font-size:14.5px;
+    padding:13px 10px;border-radius:14px;
+    transition:transform .12s ease,filter .12s ease;
+  }
+  .pill.kofi{background:linear-gradient(90deg,var(--kofi1),var(--pink));box-shadow:0 6px 20px rgba(255,94,91,.4)}
+  .pill.comm{background:linear-gradient(90deg,var(--purple),#3d8bff);box-shadow:0 6px 20px rgba(122,60,255,.4)}
+  .pill:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
+  .links{margin-top:12px;display:flex;flex-direction:column;gap:11px}
+  .link{
+    display:flex;align-items:center;gap:12px;
+    text-decoration:none;color:var(--ink);
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:14px;padding:13px 14px;
+    transition:transform .12s ease,border-color .12s ease,box-shadow .12s ease;
+  }
+  .link:hover{transform:translateY(-1px);border-color:var(--accent,#7a3cff);box-shadow:0 6px 20px rgba(122,60,255,.28)}
+  .link .ic{
+    flex:none;width:40px;height:40px;border-radius:11px;
+    display:flex;align-items:center;justify-content:center;font-size:20px;
+    background:linear-gradient(135deg,var(--accent,#7a3cff),#221a38);
+  }
+  .link .txt{min-width:0;flex:1}
+  .link .lbl{font-size:15px;font-weight:700}
+  .link .dom{font-size:11.5px;color:#8f82b8;margin-top:1px}
+  .link .arrow{color:#6f6397;font-size:16px}
+
+  .latest{margin-top:12px;padding:13px 14px;border-radius:14px;
+    background:rgba(0,224,255,.05);border:1px solid rgba(0,224,255,.18)}
+  .latest-head{font-size:11px;font-weight:800;letter-spacing:1.2px;color:#8fd8ee;text-transform:uppercase;
+    display:flex;align-items:center;gap:6px}
+  .latest-head .dot{width:6px;height:6px;border-radius:50%;background:#00e0ff;box-shadow:0 0 8px #00e0ff}
+  .latest-text{margin-top:8px;font-size:13.5px;line-height:1.5;color:#dbe9f4}
+  .latest-link{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:700;color:#00e0ff;text-decoration:none}
+  .latest-link:hover{text-decoration:underline}
+
+  .foot{
+    margin-top:20px;text-align:center;
+    font-size:11px;font-weight:600;letter-spacing:1.4px;
+    color:#7d6fa6;text-transform:uppercase;line-height:1.7;
+  }
+  .foot span{color:#5b4f7d}
+
+  .fade{opacity:0;transform:translateY(8px);animation:up .5s ease forwards}
+  @keyframes up{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion: reduce){
+    .card{animation:none}
+    .fade{opacity:1;transform:none;animation:none}
+  }
+</style>
+</head>
+<body class="gated">
+
+  <!-- ==================== AVISO DE EDAD (18+) ==================== -->
+  <div class="gate" id="gate">
+    <div class="gate-box">
+      <div class="gicon">🔞</div>
+      <h2>Aviso de edad</h2>
+      <p>Este sitio contiene contenido para adultos (NSFW).<br>Debes ser mayor de 18 años para entrar.</p>
+      <div class="gbtns">
+        <button class="gbtn yes" id="gate-yes" type="button">Soy mayor de 18 · Entrar</button>
+        <button class="gbtn no" id="gate-no" type="button">No, salir</button>
+      </div>
+      <div class="gnote">Al entrar confirmas que tienes 18 años o más.</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="inner">
+
+        <!-- ==================== PERFIL ====================
+             Para cambiar tu avatar, cambia el "src" de la imagen de abajo
+             por la URL de tu propia foto.
+        -->
+        <header class="profile fade" style="animation-delay:.05s">
+          <img class="avatar" src="https://cdn.bsky.app/img/avatar/plain/did:plc:x5om3mtyxzbgf673wvx33imq/bafkreice3yoopyacyyi7tpxym4ymb34wiq6cncse2c2wvarfzuxokrvd7a" alt="Chronyvern">
+          <h1 class="name">Chronyvern</h1>
+          <p class="tag">Artista NSFW · Ilustraciones +18</p>
+          <div class="badges">
+            <span class="badge">18+</span>
+            <span class="badge alt">NSFW</span>
+          </div>
+        </header>
+
+        <!-- ==================== APOYO / COMISIONES ====================
+             ⚠️ El botón "Comisiones" apunta a la sección de comisiones de
+             TU PORTAFOLIO (el proyecto Next.js). Después de publicarlo en
+             Vercel, cambia "TU-PROYECTO" por el nombre real de tu URL.
+             Ejemplo: https://mi-portafolio.vercel.app/#comisiones
+        -->
+        <div class="money fade" style="animation-delay:.12s">
+          <a class="pill kofi" href="https://ko-fi.com/chronyvern" target="_blank" rel="noopener noreferrer">☕ Ko-fi</a>
+          <a class="pill comm" href="https://TU-PROYECTO.vercel.app/#comisiones" target="_blank" rel="noopener noreferrer">💼 Comisiones</a>
+        </div>
+
+        <!-- ==================== ENLACES ====================
+             Edita la lista en el <script> de abajo (const LINKS).
+        -->
+        <nav class="links" id="links"></nav>
+
+        <!-- ==================== ÚLTIMA PUBLICACIÓN ====================
+             Se trae automáticamente de tu Bluesky.
+        -->
+        <section class="latest fade" id="latest" style="animation-delay:.24s">
+          <div class="latest-head"><span class="dot"></span> Última publicación · Bluesky</div>
+          <div id="latest-body"><p class="latest-text">Cargando…</p></div>
+        </section>
+
+        <footer class="foot fade" style="animation-delay:.3s">
+          Contenido para adultos · +18<br><span>© Chronyvern</span>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+<script>
+  // ============================================================
+  //  EDITAR ENLACES — agrega, quita o reordena objetos de la lista.
+  //  - icon:   emoji que se muestra a la izquierda
+  //  - label:  nombre visible del sitio
+  //  - dom:    texto pequeño debajo (dominio)
+  //  - url:    dirección a la que lleva el botón (si está vacío, no se muestra)
+  //  - accent: color de acento del icono/borde (opcional)
+  // ============================================================
+  const LINKS = [
+    { icon: "🐾", label: "FurAffinity", dom: "furaffinity.net", url: "https://www.furaffinity.net/user/chronyvern", accent: "#2fd4b0" },
+    { icon: "🐺", label: "e621",        dom: "e621.net",        url: "https://e621.net/users/2769954",            accent: "#4f8cff" },
+    { icon: "🎨", label: "Pixiv",       dom: "pixiv.net",       url: "https://www.pixiv.net/en/users/128107090",  accent: "#0096fa" },
+    { icon: "🦋", label: "Bluesky",     dom: "bsky.app",        url: "https://bsky.app/profile/chronyvern.bsky.social", accent: "#3d8bff" },
+    { icon: "𝕏",  label: "X (Twitter)", dom: "x.com",           url: "https://x.com/chronyvern",                 accent: "#9aa4b2" },
+    // { icon: "🌐", label: "Web / Portafolio", dom: "tusitio.com", url: "", accent: "#e0b3ff" },  // pon tu URL para activarlo
+  ];
+
+  // ============ AVISO DE EDAD ============
+  (function () {
+    const KEY = "chronyvern_18plus";
+    const gate = document.getElementById("gate");
+    function enter() {
+      try { localStorage.setItem(KEY, "1"); } catch (e) {}
+      gate.classList.add("hidden");
+      document.body.classList.remove("gated");
+    }
+    function deny() {
+      const box = gate.querySelector(".gate-box");
+      box.innerHTML =
+        '<div class="gicon">🚫</div>' +
+        '<h2>Acceso no permitido</h2>' +
+        '<p>Este contenido es exclusivo para mayores de 18 años.</p>' +
+        '<div class="gbtns"><a class="gbtn no" href="https://www.google.com" rel="noopener">Salir</a></div>';
+    }
+    try {
+      if (localStorage.getItem(KEY) === "1") {
+        gate.classList.add("hidden");
+        document.body.classList.remove("gated");
+      }
+    } catch (e) {}
+    document.getElementById("gate-yes").addEventListener("click", enter);
+    document.getElementById("gate-no").addEventListener("click", deny);
+  })();
+
+  // ============ RENDER DE ENLACES ============
+  const host = document.getElementById("links");
+  LINKS.forEach((l, i) => {
+    if (!l.url) return; // enlaces sin URL no se muestran
+    const a = document.createElement("a");
+    a.className = "link fade";
+    a.style.animationDelay = (0.18 + i * 0.05) + "s";
+    a.href = l.url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    if (l.accent) a.style.setProperty("--accent", l.accent);
+
+    const ic = document.createElement("span");
+    ic.className = "ic";
+    ic.textContent = l.icon;
+
+    const txt = document.createElement("span");
+    txt.className = "txt";
+    const lbl = document.createElement("span");
+    lbl.className = "lbl";
+    lbl.textContent = l.label;
+    const dom = document.createElement("span");
+    dom.className = "dom";
+    dom.textContent = l.dom;
+    txt.appendChild(lbl);
+    txt.appendChild(dom);
+
+    const arrow = document.createElement("span");
+    arrow.className = "arrow";
+    arrow.textContent = "↗";
+
+    a.appendChild(ic);
+    a.appendChild(txt);
+    a.appendChild(arrow);
+    host.appendChild(a);
+  });
+
+  // ============ ÚLTIMA PUBLICACIÓN (Bluesky) ============
+  function truncate(s, n) {
+    return s.length > n ? s.slice(0, n).trim() + "…" : s;
+  }
+  async function loadLatest() {
+    const section = document.getElementById("latest");
+    const body = document.getElementById("latest-body");
+    const ACTOR = "chronyvern.bsky.social";
+    try {
+      const res = await fetch(
+        "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=" +
+        ACTOR + "&limit=1&filter=posts_no_replies"
+      );
+      if (!res.ok) throw new Error("http " + res.status);
+      const data = await res.json();
+      const post = data.feed && data.feed[0] && data.feed[0].post;
+      if (!post || !post.uri) throw new Error("sin post");
+      const rkey = post.uri.split("/").pop();
+      const url = "https://bsky.app/profile/" + ACTOR + "/post/" + rkey;
+      const text = (post.record && post.record.text) || "";
+
+      body.textContent = "";
+      const p = document.createElement("p");
+      p.className = "latest-text";
+      p.textContent = text ? truncate(text, 150) : "Nueva publicación 🖼️";
+      body.appendChild(p);
+
+      const a = document.createElement("a");
+      a.className = "latest-link";
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = "Ver en Bluesky ↗";
+      body.appendChild(a);
+    } catch (e) {
+      if (section) section.style.display = "none";
+    }
+  }
+  loadLatest();
+</script>
+</body>
+</html>
