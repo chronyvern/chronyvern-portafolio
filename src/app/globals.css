@@ -21,9 +21,32 @@ html {
 }
 
 body {
-  background: var(--background);
+  /* Fondo oscuro con brillos de color para que el "glass" tenga qué desenfocar */
+  background:
+    radial-gradient(900px 520px at 10% -6%, rgba(244, 63, 94, 0.16), transparent 60%),
+    radial-gradient(820px 520px at 100% 0%, rgba(124, 92, 255, 0.16), transparent 60%),
+    radial-gradient(760px 600px at 50% 112%, rgba(56, 160, 255, 0.12), transparent 60%),
+    var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Glassmorphism (estilo macOS / iOS) ---------- */
+.glass {
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.glass-nav {
+  background: rgba(9, 9, 11, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 ::selection {
