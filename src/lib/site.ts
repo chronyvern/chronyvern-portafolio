@@ -45,6 +45,13 @@ export const site = {
   // ¿Aceptas comisiones ahora? true = "Abiertas" / false = "Cerradas"
   commissionsOpen: true,
 
+  // Pago con crypto (USDT en Tron). La dirección es fija, no cambia.
+  crypto: {
+    coin: "USDT",
+    network: "Tron (TRC-20)",
+    address: "TF3HQZ8EH6QWMWkoDqi8gayfaaKC53Zvk7",
+  },
+
   // Enlaces a tus redes (los nombres son iguales en todos los idiomas)
   socials: [
     { label: "FurAffinity", href: "https://www.furaffinity.net/user/chronyvern" },

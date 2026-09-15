@@ -41,6 +41,22 @@ export default function SiteContent({ posts }: { posts: E621Post[] }) {
     }
   }
 
+  const [copied, setCopied] = useState(false);
+
+  function copyAddress() {
+    try {
+      navigator.clipboard
+        .writeText(site.crypto.address)
+        .then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        })
+        .catch(() => {});
+    } catch {
+      /* portapapeles no disponible */
+    }
+  }
+
   const d = t[lang];
 
   const navLinks = [
@@ -247,6 +263,49 @@ export default function SiteContent({ posts }: { posts: E621Post[] }) {
                 </li>
               ))}
             </ul>
+
+            {/* Pago con crypto */}
+            <div className="glass mt-8 rounded-2xl p-6">
+              <h3 className="text-xl font-semibold text-foreground">{d.crypto.title}</h3>
+              <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(site.crypto.address)}`}
+                  alt="QR para pagar con USDT"
+                  width={160}
+                  height={160}
+                  className="h-40 w-40 shrink-0 rounded-xl border border-white/10 bg-white"
+                />
+                <div className="min-w-0 flex-1">
+                  <div className="text-xs uppercase tracking-wide text-muted">
+                    {d.crypto.networkLabel}:{" "}
+                    <span className="text-foreground">
+                      {site.crypto.coin} · {site.crypto.network}
+                    </span>
+                  </div>
+                  <div className="mt-2 text-xs uppercase tracking-wide text-muted">
+                    {d.crypto.addressLabel}
+                  </div>
+                  <div className="mt-1 flex items-center gap-2">
+                    <code className="min-w-0 flex-1 break-all rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-xs text-foreground">
+                      {site.crypto.address}
+                    </code>
+                    <button
+                      type="button"
+                      onClick={copyAddress}
+                      className="shrink-0 rounded-lg bg-accent px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-rose-400"
+                    >
+                      {copied ? d.crypto.copied : d.crypto.copy}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ol className="mt-5 list-decimal space-y-2 pl-5 text-sm text-muted">
+                {d.crypto.steps.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ol>
+            </div>
 
             <a
               href={site.koFi}

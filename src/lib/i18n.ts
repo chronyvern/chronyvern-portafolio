@@ -42,6 +42,14 @@ type Dict = {
   };
   about: { title: string; paragraphs: string[] };
   contact: { title: string; subtitle: string };
+  crypto: {
+    title: string;
+    steps: string[];
+    addressLabel: string;
+    networkLabel: string;
+    copy: string;
+    copied: string;
+  };
   footer: { adult: string; rights: string };
 };
 
@@ -117,6 +125,18 @@ export const t: Record<Lang, Dict> = {
     contact: {
       title: "Contacto",
       subtitle: "¿Quieres encargar una comisión o solo saludar? Escríbeme por aquí.",
+    },
+    crypto: {
+      title: "Pagar con Crypto (USDT)",
+      steps: [
+        "Envía 1 USDT de prueba a esta dirección.",
+        "Confirma conmigo que llegó.",
+        "Envía el resto del 50% y empiezo a dibujar.",
+      ],
+      addressLabel: "Dirección",
+      networkLabel: "Red",
+      copy: "Copiar",
+      copied: "¡Copiado!",
     },
     footer: {
       adult: "Contenido solo para adultos (+18).",
@@ -196,6 +216,18 @@ export const t: Record<Lang, Dict> = {
       title: "Contact",
       subtitle: "Want to commission me or just say hi? Message me here.",
     },
+    crypto: {
+      title: "Pay with Crypto (USDT)",
+      steps: [
+        "Send a $1 USDT test to this address.",
+        "Confirm with me that it arrived.",
+        "Send the rest of the 50% and I'll start drawing.",
+      ],
+      addressLabel: "Address",
+      networkLabel: "Network",
+      copy: "Copy",
+      copied: "Copied!",
+    },
     footer: {
       adult: "Adults only content (18+).",
       rights: "© {year} {name}. All rights reserved.",
@@ -272,6 +304,18 @@ export const t: Record<Lang, Dict> = {
     contact: {
       title: "お問い合わせ",
       subtitle: "ご依頼やご質問はこちらからどうぞ。",
+    },
+    crypto: {
+      title: "暗号通貨での支払い (USDT)",
+      steps: [
+        "このアドレスにテストで1 USDTを送ってください。",
+        "届いたか私に確認してください。",
+        "残りの50%をお送りください。確認後、制作を開始します。",
+      ],
+      addressLabel: "アドレス",
+      networkLabel: "ネットワーク",
+      copy: "コピー",
+      copied: "コピーしました！",
     },
     footer: {
       adult: "18歳以上向けコンテンツです。",
