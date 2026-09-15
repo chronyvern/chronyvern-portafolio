@@ -99,6 +99,7 @@ export const t: Record<Lang, Dict> = {
       soonLabel: "Próximamente",
       payments: [
         { name: "Ko-fi", href: "https://ko-fi.com/chronyvern", active: true, note: "Pago con PayPal o tarjeta" },
+        { name: "Crypto (USDT · USDC)", href: "", active: true, note: "Pregunta por la dirección" },
         { name: "Artconomy", href: "", active: false, note: "Escrow y tarjeta" },
         { name: "VGen", href: "", active: false, note: "Comisiones con buffer" },
       ],
@@ -176,6 +177,7 @@ export const t: Record<Lang, Dict> = {
       soonLabel: "Coming soon",
       payments: [
         { name: "Ko-fi", href: "https://ko-fi.com/chronyvern", active: true, note: "Pay via PayPal or card" },
+        { name: "Crypto (USDT · USDC)", href: "", active: true, note: "Ask for the address" },
         { name: "Artconomy", href: "", active: false, note: "Escrow & card" },
         { name: "VGen", href: "", active: false, note: "Buffered commissions" },
       ],
@@ -252,6 +254,7 @@ export const t: Record<Lang, Dict> = {
       soonLabel: "近日対応",
       payments: [
         { name: "Ko-fi", href: "https://ko-fi.com/chronyvern", active: true, note: "PayPalまたはカード払い" },
+        { name: "Crypto (USDT · USDC)", href: "", active: true, note: "アドレスはお問い合わせください" },
         { name: "Artconomy", href: "", active: false, note: "エスクロー・カード" },
         { name: "VGen", href: "", active: false, note: "バッファ式コミッション" },
       ],
