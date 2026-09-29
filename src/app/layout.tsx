@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AgeGate from "@/components/AgeGate";
+import AnalyticsGate from "@/components/AnalyticsGate";
 import { site } from "@/lib/site";
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <AgeGate />
+        <AnalyticsGate />
         {children}
       </body>
     </html>
